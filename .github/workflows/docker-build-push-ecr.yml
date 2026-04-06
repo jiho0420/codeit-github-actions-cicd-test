@@ -120,13 +120,6 @@ jobs:
             --task-definition $TASK_DEF_ARN \
             --force-new-deployment
 
-      # 13) 배포 완료 대기 (서비스가 안정 상태가 될 때까지)
-      #      - name: ECS 배포 완료 대기
-      #        run: |
-      #          aws ecs wait services-stable \
-      #            --cluster ${{ secrets.ECS_CLUSTER }} \
-      #            --services ${{ secrets.ECS_SERVICE }}
-
       # 14) 배포 상태 확인 (디플로이먼트 요약 출력)
       - name: ECS 배포 상태 확인
         run: |
